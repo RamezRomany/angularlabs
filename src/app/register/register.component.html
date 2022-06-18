@@ -1,0 +1,35 @@
+<div class="container">
+    <form [formGroup]="reactiveform" (ngSubmit)="register()">
+        <div>
+            <label for="exampleInputname" class="form-label">Name</label>
+            <input type="text" class="form-control" id="exampleInputname" formControlName="Name" required>
+            <div *ngIf="reactiveform.controls['Name'].touched && !reactiveform.controls['Name'].valid" class="text-danger">Enter Your Full Name</div>
+        </div>
+
+        <div>
+            <label for="exampleInputname" class="form-label">Email</label>
+            <input type="text" class="form-control" id="exampleInputname" formControlName="email" required>
+            <div *ngIf="reactiveform.controls['email'].touched && !reactiveform.controls['email'].valid" id="emailHelp" class="text-danger">Enter Your Email</div>
+        </div>
+
+        <div>
+            <label for="exampleInputname" class="form-label">User Name</label>
+            <input type="text" class="form-control" id="exampleInputname" formControlName="userName" required>
+            <div *ngIf="reactiveform.controls['userName'].touched && !reactiveform.controls['userName'].valid" id="emailHelp" class="text-danger">Enter Your User Name.</div>
+        </div>
+        <div>
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password" required>
+            <div *ngIf="reactiveform.controls['password'].touched && !reactiveform.controls['password'].valid" id="emailHelp" class="text-danger">Enter Your Password.</div>
+        </div>
+
+        <div>
+            <label for="exampleInputPassword1" class="form-label"> Confirm Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" formControlName="Cpassword" required>
+            <div *ngIf="reactiveform.controls['Cpassword'].touched && !reactiveform.controls['Cpassword'].valid" id="emailHelp" class="text-danger">The Password Not Match
+            </div>
+        </div><br>
+
+        <button type="submit" class="btn btn-primary" [disabled]="!reactiveform.valid">Submit</button>
+    </form>
+</div>

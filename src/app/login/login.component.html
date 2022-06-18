@@ -1,0 +1,23 @@
+<div class="container ">
+    <form #login="ngForm" (ngSubmit)="login">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" ngModel name="EmailAddress" required>
+
+            <div *ngIf="login.controls['EmailAddress'] && login.controls['EmailAddress'].touched && !login.controls['EmailAddress'].valid" id="emailHelp" class="text-danger"> the email is not correcr</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password" required ngModel>
+
+            <div *ngIf="login.controls['password'] && login.controls['password'].touched && !login.controls['password'].valid" id="passwordHelp" class="text-danger">the password is not correct</div>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary" [disabled]="!login.valid">Submit</button>
+
+
+
+
+    </form>
+</div>

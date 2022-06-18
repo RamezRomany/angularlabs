@@ -1,0 +1,22 @@
+<!-- <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img [src]="blogDetails.image_url" class="img-fluid rounded-start w-100" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{blogDetails.title}}</h5>
+                <p class="card-text">{{blogDetails.full_description}}</p>
+                <p class="card-text"><small class="text-muted">{{blogDetails.pubDate}}</small></p>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="card mb-3">
+    <img [src]="blogDetails.image_url ||defualtImage" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{blogDetails.title}}</h5>
+        <p class="card-text">{{blogDetails.full_description ||defualtDesc}}</p>
+        <p class="card-text"><small class="text-muted">{{blogDetails.pubDate | date:"medium"}}</small></p>
+    </div>
+</div>
